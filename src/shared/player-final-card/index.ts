@@ -1,0 +1,1 @@
+export { PlayerFinalCard } from './PlayerFinalCard';

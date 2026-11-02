@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Alegreya Sans';
+  src:
+    local('Alegreya Sans Regular'),
+    url('AlegreyaSans.ttf') format('truetype');
+  font-style: normal;
+}

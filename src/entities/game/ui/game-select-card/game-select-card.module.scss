@@ -1,0 +1,96 @@
+.game {
+  position: relative;
+  padding: 12px 11px;
+  margin-bottom: 1.5rem;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  background: #152a36;
+  cursor: pointer;
+  border: 2px solid #152a36;
+  min-width: 350px;
+
+  @media (max-width: 48.5em) {
+    padding: 16px 11px;
+    min-width: 290px;
+  }
+
+  &:hover {
+    background: #1e3b4c;
+    border-color: #1e3b4c;
+  }
+
+  &.selected {
+    border: 2px solid #4eb5b5;
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.gameBtns {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  transition: 0.3s ease;
+  display: flex;
+  gap: 12px;
+
+  img {
+    height: 18px;
+  }
+  @media (max-width: 1623px) {
+    position: static;
+    margin-left: 50%;
+  }
+  @media (max-width: 1331px) {
+    position: absolute;
+  }
+}
+
+.btn_svg {
+  margin-left: 10px;
+  svg {
+    fill: #4eb5b5;
+    use {
+      color: #fff;
+    }
+  }
+}
+
+.game__card {
+  @media (max-width: 992px) {
+    margin-top: 15px;
+  }
+  @media (max-width: 972px) {
+    margin-top: 0px;
+  }
+}
+
+.game__card_img {
+  margin-right: 24px;
+  /*   max-width: 30%; */
+  /*   height: auto; */
+  height: 208px;
+  width: 155px;
+  /* object-fit: contain; */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.subtitle {
+  font-family: 'Gilroy Medium', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 4%;
+  margin-bottom: 4px;
+
+  @media (max-width: 99em) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 48.5em) {
+    font-size: 20px;
+  }
+}

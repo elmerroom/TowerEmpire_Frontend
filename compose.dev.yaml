@@ -1,0 +1,15 @@
+services:
+  nginx:
+    image: ${IMAGE_NAME}:${CI_COMMIT_SHORT_SHA}
+    labels:
+      - traefik.http.routers.nginx.rule=Host(`dev.tower-empire.org`)
+      - traefik.http.routers.nginx.entrypoints=https
+      - traefik.http.routers.nginx.tls=true
+      - traefik.http.routers.nginx.tls.certresolver=letsencrypt
+      - traefik.http.services.nginx.loadbalancer.server.port=80
+    networks:
+      - traefik_network
+
+networks:
+  traefik_network:
+    external: true

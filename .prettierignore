@@ -1,0 +1,52 @@
+# Node modules and build artifacts
+node_modules/
+build/
+dist/
+public/build/
+
+# Caches, lockfiles and editor metadata
+.cache/
+coverage/
+.DS_Store
+.vscode/
+.idea/
+*.log
+*.lock
+
+# Env files
+.env
+.env.*
+
+# Minified/bundled/generated files
+*.min.js
+*.bundle.js
+*.gz
+*.br
+
+# Binary assets (no need to format)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.webm
+*.mp3
+*.wav
+*.ico
+*.zip
+*.tar
+*.pdf
+
+# Fonts and other binary blobs
+fonts/
+*.woff
+*.woff2
+*.eot
+*.ttf
+
+# YAML patterns (if you want Prettier to ignore yaml files)
+*.yaml
+*.yml
+
+# Project-specific: keep build outputs ignored
+build/**

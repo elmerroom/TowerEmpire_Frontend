@@ -1,0 +1,81 @@
+.header {
+  &Wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /*   position: relative; */
+  /*   & {
+    padding: 70px 0 24px;
+  } */
+  &Title {
+    font-weight: 700;
+    font-size: 73px;
+    line-height: 107%;
+    color: #fff;
+    margin-bottom: 45px;
+  }
+  &Text {
+    width: 512px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 133%;
+    letter-spacing: 0.04em;
+    color: rgba(78, 181, 181, 0.75);
+    margin-bottom: 54px;
+  }
+  &Subtitle {
+    width: 512px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: 0.04em;
+    color: #fff;
+    margin-bottom: 32px;
+  }
+  &ButtonWrap {
+    width: 512px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &PlayButton {
+    border-radius: 10px;
+    width: 234px;
+    height: 54px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 22px;
+    color: #102430;
+  }
+  &HowButton {
+    border: 2px solid #26414f;
+    border-radius: 10px;
+    width: 234px;
+    height: 54px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
+    color: #fff;
+    background-color: transparent;
+  }
+  &Devider {
+    width: 708px;
+    height: 100px;
+    margin: 0 auto;
+  }
+  &ImgWrapper {
+    position: relative;
+    height: 882px;
+  }
+  &Maskot {
+    display: block;
+    width: 844px;
+    height: 850px;
+    position: absolute;
+    bottom: 60px;
+    right: -120px;
+    pointer-events: none;
+  }
+}

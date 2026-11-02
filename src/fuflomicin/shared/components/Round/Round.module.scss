@@ -1,0 +1,26 @@
+.round {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 8px;
+
+  .roundNumber {
+    margin: 0;
+    font-family: 'Nevduplenysh', sans-serif;
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: #222222;
+  }
+
+  &.hff .roundNumber {
+    font-family: 'Piazzolla', serif;
+  }
+
+  @media (max-width: 1024px) {
+    .status {
+      font-size: 20px;
+    }
+  }
+}

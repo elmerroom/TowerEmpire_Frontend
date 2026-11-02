@@ -1,0 +1,420 @@
+// Стили для универсальной модалки действий над игроком
+// Поддерживает режимы: lobby и game
+// Адаптивность для разных разрешений
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 26px 32px;
+  border-radius: 15px;
+  max-width: 90vw;
+  width: 400px;
+  box-sizing: border-box;
+}
+
+// Режим Lobby
+.modalLobby {
+  background: #152a36;
+  border: 1px solid rgba(78, 181, 181, 0.75);
+  box-shadow: 0px 4px 100px 0px rgba(78, 181, 181, 0.5);
+}
+
+// Режим Game
+.modalGame {
+  background: #222222;
+  border: 1px solid rgba(255, 181, 70, 0.75);
+  box-shadow: 0px 4px 100px 0px rgba(255, 181, 70, 0.5);
+}
+
+// Режим Fuflomicin
+.modalFufl {
+  background: #f3dcb1;
+  border: none;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5);
+
+  .title,
+  .text {
+    color: #222;
+  }
+
+  .closeBtn {
+    background: #f3dcb1;
+    color: #000;
+    svg path {
+      fill: #000;
+    }
+  }
+}
+
+// Режим Hire For Fun
+
+.modalHff {
+  background: #ded0b9;
+  border: none;
+  box-shadow: 0px 4px 100px 0px rgba(255, 181, 70, 0.5);
+
+  .title,
+  .text {
+    color: #222;
+  }
+
+  .title {
+    font-family: Stengazeta, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    font-size: 32px;
+    line-height: 1em;
+  }
+
+  .text {
+    font-family: Piazzolla;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    text-align: center;
+  }
+
+  .closeBtn {
+    color: #000;
+
+    transition: transform 0.25s ease;
+    svg path {
+      fill: #000;
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background: none;
+      box-shadow: none;
+      transform: scale(1.15);
+    }
+
+    &:active {
+      transform: scale(0.9);
+      transition: transform 0.1s ease;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.title {
+  flex: 1;
+  text-align: center;
+  font-family: 'Baron Neue', sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.8px;
+  color: #fefefe;
+  margin: 0;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #ff6b6b;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.text {
+  font-family: 'Gilroy', sans-serif;
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  color: #fefefe;
+  margin: 0;
+}
+
+.errorText {
+  font-family: 'Gilroy', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #ff8b8b;
+  margin: 0;
+}
+
+.playerName {
+  font-family: 'Gilroy', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+// Цвет имени в зависимости от режима
+.playerNameLobby {
+  color: #4eb5b5;
+}
+
+.playerNameGame {
+  color: #ffb546;
+}
+
+.playerNameFufl {
+  color: #c05151;
+}
+
+.playerNameHFF {
+  color: #be3f3b;
+  font-family: Piazzolla, sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+// Базовая кнопка
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  padding: 5px 32px;
+  font-family: 'Gilroy', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+// Setting the font for HFF
+.btnConfirm,
+.btnOutline {
+  &.hffVariant {
+    font-family: Piazzolla, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    font-size: 20px;
+    padding-bottom: 8px;
+    color: #fffadd;
+  }
+}
+
+// Кнопка "Нет" - outline стиль
+.btnOutline {
+  background: transparent;
+  color: #ffffff;
+
+  &.lobbyVariant {
+    border: 1px solid #4eb5b5;
+
+    &:hover {
+      background-color: rgba(78, 181, 181, 0.15);
+      transform: scale(1.04);
+      box-shadow: 0 0 14px rgba(78, 181, 181, 0.5);
+    }
+  }
+
+  &.gameVariant {
+    border: 1px solid #ffb546;
+
+    &:hover {
+      background-color: rgba(255, 181, 70, 0.15);
+      transform: scale(1.04);
+      box-shadow: 0 0 14px rgba(255, 181, 70, 0.55);
+    }
+  }
+
+  &.fuflVariant {
+    border: 1px solid #a89879;
+    background: #a89879;
+    color: #222;
+
+    &:hover {
+      background-color: rgba(251, 133, 106, 0.15);
+      transform: scale(1.04);
+      box-shadow: 0 0 14px rgba(251, 133, 106, 0.55);
+    }
+  }
+
+  &.hffVariant {
+    border: none;
+    background-color: #a19582;
+
+    &:hover {
+      filter: none;
+      transform: scale(1.04);
+      background-color: #db4b46 !important;
+      box-shadow: 0 0 14px rgba(251, 133, 106, 0.5);
+    }
+  }
+}
+
+// Кнопка "Да" - подтверждение
+.btnConfirm {
+  border: none;
+  color: #1a1a2e;
+
+  &.lobbyVariant {
+    background-color: #4eb5b5;
+
+    &:hover {
+      background-color: #3da4a4;
+      transform: scale(1.04);
+      box-shadow: 0 0 14px rgba(78, 181, 181, 0.5);
+    }
+  }
+
+  &.gameVariant {
+    background-color: #ffb546;
+
+    &:hover {
+      background-color: #e5951c;
+      transform: scale(1.04);
+      box-shadow: 0 0 14px rgba(255, 181, 70, 0.55);
+    }
+  }
+
+  &.fuflVariant {
+    background-color: #fb856a;
+    color: #fff;
+
+    &:hover {
+      background-color: #c05151;
+      transform: scale(1.04);
+      box-shadow: 0 0 14px rgba(251, 133, 106, 0.55);
+    }
+  }
+
+  &.hffVariant {
+    background-color: #be3f3b !important;
+
+    &:hover {
+      filter: none;
+      transform: scale(1.04);
+      background-color: #db4b46 !important;
+      box-shadow: 0 0 14px rgba(251, 133, 106, 0.5);
+    }
+  }
+}
+
+// Адаптивность
+@media (max-width: 768px) {
+  .modal {
+    width: 90vw;
+    padding: 20px 24px;
+  }
+
+  .title {
+    font-size: 1.1em;
+  }
+
+  .playerName {
+    font-size: 20px;
+  }
+
+  .btn {
+    min-width: 80px;
+    padding: 5px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    width: 95vw;
+    padding: 16px 20px;
+  }
+
+  .title {
+    font-size: 1em;
+  }
+
+  .text {
+    font-size: 15px;
+  }
+
+  .playerName {
+    font-size: 18px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .modal {
+    width: 450px;
+    padding: 32px 40px;
+  }
+
+  .title {
+    font-size: 1.4em;
+  }
+
+  .playerName {
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,59 @@
+.sentenceFieldWrapper {
+  height: 155px;
+  position: relative;
+  padding: 10px 34px;
+
+  .goldenFrameSVGLeft,
+  .goldenFrameSVGRight {
+    position: absolute;
+    height: 48px;
+    width: 29px;
+    top: 52px;
+  }
+  .goldenFrameSVGLeft {
+    left: 7px;
+  }
+
+  .goldenFrameSVGRight {
+    right: 7px;
+  }
+
+  .sentenceFrame {
+    position: relative;
+    height: 135px;
+    padding: 28px 24px;
+    border: 2px solid #ecb353;
+    border-radius: 15px;
+    background: rgba(245, 221, 176, 0.16);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .finalSentence {
+      color: #f5ddb0;
+      line-height: 41px;
+      letter-spacing: 2%;
+
+      font-family: 'Nevduplenysh';
+      font-weight: 400;
+      font-size: 44px;
+      line-height: 93%;
+      letter-spacing: 0.02em;
+      text-align: center;
+    }
+
+    .sentenceContainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__droppable {
+      background-color: rgba(245, 221, 176, 0.14);
+    }
+  }
+}

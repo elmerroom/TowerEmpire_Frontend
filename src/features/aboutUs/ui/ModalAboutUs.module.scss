@@ -1,0 +1,124 @@
+.social {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  button {
+    height: 50px;
+    width: 100px;
+    border-radius: 10px !important;
+    box-sizing: border-box;
+    @media (max-width: 430px) {
+      width: 80px;
+    }
+  }
+
+  &__subheader {
+    font-size: 0.8em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    color: #ffb546;
+    text-align: center;
+  }
+
+  &__btn-discord {
+    background-color: #324e94;
+    border-color: #324e94;
+    background-image: url(/img/i-discord.svg);
+
+    background-position: center;
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    &:hover {
+      background-color: #203874;
+      border-color: #203874;
+    }
+  }
+  &__btn-boosty {
+    background-color: #ee9609;
+    border-color: #222222;
+    background-image: url(/img/i-boosty2.svg);
+    background-position: center;
+    background-size: auto 70%;
+    background-repeat: no-repeat;
+    &:hover {
+      background-color: #babcc2;
+    }
+  }
+  &__btn-vk {
+    background-color: #5281b8;
+    border-color: #222222;
+    background-image: url(/img/i-vk.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    &:hover {
+      background-color: #203874;
+    }
+  }
+
+  &__btn-telegram {
+    background-color: #10aadc;
+    border-color: #222222;
+    background-image: url(/img/i-telegram.svg);
+    background-position: center;
+    background-size: auto 70%;
+    background-repeat: no-repeat;
+    &:hover {
+      background-color: #203874;
+    }
+  }
+  &__mobile {
+    display: none;
+    button {
+      display: none;
+    }
+
+    @media (max-width: 1024px) {
+      button {
+        display: block;
+        padding: 0;
+        height: 23px;
+        width: 40%;
+        border-radius: 6px !important;
+      }
+    }
+  }
+}
+
+.supportCardNumber {
+  color: #ffb546;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.supportCardImg {
+  text-align: center;
+  margin-bottom: 20px;
+  img {
+    height: 100px;
+  }
+}
+
+.commercial a {
+  display: inline-block;
+}
+
+.modalScrollbar {
+  max-height: 60vh; // Ограничить высоту для появления скролла
+
+  .simplebar-scrollbar::before {
+    background-color: #ffb546; // Цвет полосы скролла
+  }
+
+  .simplebar-track.simplebar-vertical {
+    width: 4px; // Ширина трека скролла
+  }
+
+  .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+    border-radius: 2px; // Скругление полосы скролла
+  }
+}

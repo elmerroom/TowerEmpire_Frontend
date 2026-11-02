@@ -1,0 +1,203 @@
+.diceContainer {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.dice {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+}
+
+.face {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  border: 2px solid #333;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 6px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #333;
+  border-radius: 50%;
+  justify-self: center;
+  align-self: center;
+}
+
+// Позиционирование граней кубика
+.front {
+  transform: rotateY(0deg) translateZ(30px);
+
+  // Грань 1 - одна точка по центру
+  .dot:nth-child(1) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(30px);
+
+  // Грань 6 - шесть точек в два столбца
+  .dot:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .dot:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .dot:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .dot:nth-child(4) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .dot:nth-child(5) {
+    grid-column: 3;
+    grid-row: 2;
+  }
+  .dot:nth-child(6) {
+    grid-column: 3;
+    grid-row: 3;
+  }
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(30px);
+
+  // Грань 3 - три точки по диагонали
+  .dot:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .dot:nth-child(2) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .dot:nth-child(3) {
+    grid-column: 3;
+    grid-row: 3;
+  }
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(30px);
+
+  // Грань 4 - четыре точки по углам
+  .dot:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .dot:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .dot:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .dot:nth-child(4) {
+    grid-column: 3;
+    grid-row: 3;
+  }
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(30px);
+
+  // Грань 5 - четыре точки по углам + одна по центру
+  .dot:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .dot:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .dot:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .dot:nth-child(4) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .dot:nth-child(5) {
+    grid-column: 3;
+    grid-row: 3;
+  }
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(30px);
+
+  // Грань 2 - две точки по диагонали
+  .dot:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .dot:nth-child(2) {
+    grid-column: 3;
+    grid-row: 3;
+  }
+}
+
+// Адаптивность
+@media (max-width: 768px) {
+  .dice {
+    width: 50px;
+    height: 50px;
+  }
+
+  .face {
+    width: 50px;
+    height: 50px;
+    padding: 6px;
+  }
+
+  .front,
+  .back {
+    transform: rotateY(0deg) translateZ(25px);
+  }
+
+  .back {
+    transform: rotateY(180deg) translateZ(25px);
+  }
+
+  .right {
+    transform: rotateY(90deg) translateZ(25px);
+  }
+
+  .left {
+    transform: rotateY(-90deg) translateZ(25px);
+  }
+
+  .top {
+    transform: rotateX(90deg) translateZ(25px);
+  }
+
+  .bottom {
+    transform: rotateX(-90deg) translateZ(25px);
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+  }
+}

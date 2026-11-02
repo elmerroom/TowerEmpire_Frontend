@@ -1,0 +1,206 @@
+@keyframes cover-close-to-open {
+  from {
+    border-bottom: none;
+    height: 100%;
+  }
+
+  to {
+    border-bottom: double 3px rgba(255, 181, 70, 1);
+    height: 0;
+    top: -4px;
+  }
+}
+
+.game-card {
+  .simplebar-content {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    color: #fefefe;
+    font-size: clamp(0.67em, 1.092vw, 0.94em);
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.018vw;
+    text-align: left;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    word-wrap: break-word;
+  }
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 165 / 190;
+  background: #222222;
+  border-radius: 10px;
+  padding: 10% 5%;
+  overflow: auto;
+  transition-property: transform;
+  transition-duration: 0.5s;
+  list-style-type: none;
+  position: relative;
+  cursor: pointer;
+
+  @media (max-width: 1024px) {
+    width: 10.8vw;
+    height: 12.5vw;
+    padding: 8px;
+    flex-shrink: 0;
+    border-radius: 5px;
+  }
+
+  &_chosen {
+    transform: scale(1.07);
+    -webkit-transform: scale(1.07);
+    -ms-transform: scale(1.07);
+    border: solid rgba(255, 181, 70, 1) 1px;
+    @media (max-width: 1024px) {
+      transform: scale(1);
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+    }
+  }
+
+  &_master-selected {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    border: solid #ffb546 2px;
+    box-shadow: 0 0 15px rgba(255, 181, 70, 1);
+    @media (max-width: 1024px) {
+      transform: scale(1.05);
+      -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+      border-width: 1px;
+    }
+  }
+  &_top {
+    &:nth-of-type(-n + 6) {
+      align-self: start;
+    }
+    &_disabled {
+      cursor: not-allowed;
+      border: 1px solid rgba(254, 254, 254, 0.25);
+    }
+    &_couple {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+  }
+
+  &_top_disabled::after,
+  &_bottom_disabled::after {
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    position: absolute;
+    pointer-events: none;
+    cursor: not-allowed;
+    background-color: #222222b0;
+  }
+
+  &__text {
+    height: 100%;
+    color: #fefefe;
+    font-size: clamp(0.67em, 1.092vw, 0.94em);
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.018vw;
+    text-align: left;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    word-wrap: break-word;
+    overflow: auto;
+
+    .simplebar-scrollbar::before {
+      background-color: #ffb546;
+    }
+    .simplebar-track.simplebar-vertical {
+      width: 2px;
+    }
+
+    /*     &::-webkit-scrollbar {
+      width: 3px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #fefefe;
+    } */
+    &-bottom {
+      .simplebar-content {
+        color: #ffb546;
+      }
+    }
+    &-couple {
+      margin: 4px 0;
+      box-sizing: border-box;
+      height: -webkit-fill-available;
+    }
+    @media (max-width: 1024px) {
+      font-size: 0.67em;
+      line-height: 1.2em;
+      &::-webkit-scrollbar {
+        width: 3px;
+      }
+    }
+  }
+  &__cover {
+    z-index: 1;
+    &_top {
+      &_disabled,
+      &_enabled {
+        position: absolute;
+        overflow: hidden;
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        &::after {
+          content: '';
+          background-image: url('/img/game-card/card-backwards.svg');
+          background-color: #131212;
+          background-position: center;
+          top: 0;
+          right: 0;
+          border-radius: 10px;
+          position: absolute;
+          background-repeat: no-repeat;
+          background-size: contain;
+          height: auto;
+          aspect-ratio: 165 / 190;
+          width: 100%;
+          @media (max-width: 1024px) {
+            border-radius: 5px;
+          }
+        }
+      }
+      &_disabled {
+        animation-name: cover-close-to-open;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+      }
+      &_enabled {
+        height: 0;
+      }
+    }
+  }
+  &__line {
+    position: absolute;
+    display: block;
+    align-self: center;
+    height: 1px;
+    top: 50%;
+    margin: 0;
+    opacity: 1;
+    width: calc(100% / (165 / 97));
+    background-color: #ffb546;
+  }
+}

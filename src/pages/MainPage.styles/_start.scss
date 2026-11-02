@@ -1,0 +1,97 @@
+.start {
+  &Header {
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 170%;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  &SubHeader {
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 133%;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: rgba(78, 181, 181, 0.75);
+    margin-bottom: 66px;
+  }
+  &Wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 103px;
+    &Left {
+      &Card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        width: 680px;
+        margin-bottom: 32px;
+        &Title {
+          font-family: var(--font-family);
+          font-weight: 500;
+          font-size: 32px;
+          letter-spacing: 0.04em;
+          color: #fff;
+          margin-bottom: 10px;
+        }
+        &Text {
+          font-family: var(--font-family);
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 140%;
+          letter-spacing: 0.04em;
+          color: #fff;
+        }
+      }
+      &Img {
+        align-self: self-start;
+      }
+    }
+    &Right {
+      position: relative;
+      &Img {
+        position: absolute;
+        bottom: -100px;
+        right: -180px;
+      }
+    }
+  }
+  &Registration {
+    &Wrapper {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+
+      border: 2px solid #26414f;
+      border-radius: 20px;
+      padding: 32px 64px;
+      width: 738px;
+      height: 238px;
+      background: #26414f;
+      margin-bottom: 84px;
+    }
+    &Header {
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: 32px;
+      letter-spacing: 0.04em;
+      text-align: center;
+      color: #fff;
+    }
+    &Button {
+      border-radius: 10px;
+      width: 302px;
+      height: 54px;
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 22px;
+      color: #102430;
+    }
+  }
+}

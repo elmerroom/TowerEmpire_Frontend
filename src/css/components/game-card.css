@@ -1,0 +1,80 @@
+@charset "UTF-8";
+.game-card {
+  background: #222222;
+  width: 100%;
+  height: 20vh;
+  border-radius: 10px;
+  padding: 24px 7px 24px 14px;
+  overflow: auto;
+}
+@media (max-width: 1024px) {
+  .game-card {
+    width: 10.8vw;
+    height: 27vh;
+    padding: 8px;
+    flex-shrink: 0;
+    border-radius: 5px;
+  }
+}
+
+/* Остановилась на скролбаре! */
+.game-card__text {
+  height: 100%;
+  color: #fefefe;
+  font-size: 0.94em;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  word-wrap: break-word;
+  overflow: auto;
+  padding-right: 7px;
+}
+.game-card__text::-webkit-scrollbar {
+  width: 3px;
+}
+.game-card__text::-webkit-scrollbar-thumb {
+  background: #fefefe;
+}
+@media (max-width: 1024px) {
+  .game-card__text {
+    font-size: 0.67em;
+    line-height: 1.2em;
+  }
+  .game-card__text::-webkit-scrollbar {
+    width: 3px;
+  }
+}
+
+.gold {
+  color: #ffb546;
+}
+
+/* 
+.game-card__scroll {
+  max-height: 20vh;
+  max-height: 98%;
+  word-wrap: break-word;
+  overflow: auto;
+} */
+.game-card_off {
+  background-image: url('/img/game-card/card-backwards.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.game-card_off p {
+  display: none !important;
+}
+
+@media (max-width: 1200px) {
+  .game-card_img {
+    width: 90px;
+  }
+}
+@media (max-width: 768px) {
+  .game-card_img {
+    width: 10vw;
+  }
+} /*# sourceMappingURL=game-card.css.map */

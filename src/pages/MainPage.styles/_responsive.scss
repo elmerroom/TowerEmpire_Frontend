@@ -1,0 +1,320 @@
+@media (max-width: 1400px) {
+  .startWrapper {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .startWrapperLeftCard {
+    width: 100%;
+  }
+  .headerWrapper {
+    height: auto;
+    height: 700px;
+    padding-left: 15px;
+  }
+  .headerTitle {
+    font-size: 65px;
+  }
+  .headerMaskot {
+    display: block;
+    width: 844px;
+    height: 700px;
+    position: absolute;
+    bottom: 60px;
+    right: 2px;
+  }
+  .startWrapperRightImg {
+    position: static;
+    right: auto;
+    bottom: auto;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 20px;
+  }
+  .stickyHeaderWrapper {
+    padding: 10px 20px;
+  }
+  .headerWrapper {
+    height: auto;
+    flex-direction: column;
+    padding-left: 0px;
+    padding-top: 40px;
+  }
+  .headerTitle {
+    font-size: 56px;
+    line-height: 110%;
+    text-align: center;
+  }
+  .headerText,
+  .headerSubtitle,
+  .headerButtonWrap {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+  .headerButtonWrap {
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .headerImgWrapper {
+    height: auto;
+  }
+  .headerMaskot {
+    position: static;
+    width: 100%;
+    max-width: 520px;
+    height: 500px;
+    margin: 0 auto;
+  }
+  .headerDevider {
+    width: 100%;
+    height: 100px;
+    svg {
+      height: 100%;
+    }
+  }
+  .contactsWrapper {
+    justify-content: space-around;
+  }
+}
+@media (max-width: 1024px) {
+  .stickyHeaderNav a {
+    font-size: 18px;
+  }
+
+  .headerTitle {
+    font-size: 48px;
+  }
+
+  .headerMaskot {
+    height: 320px;
+  }
+  .headerDevider {
+    height: 50px;
+    svg {
+      height: 100%;
+    }
+  }
+  .startHeader {
+    line-height: 110%;
+  }
+  .startWrapper {
+    margin-bottom: 50px;
+  }
+  .startWrapperLeftCard {
+    width: 100%;
+  }
+  .startWrapperLeftCardTitle {
+    font-size: 28px;
+  }
+  .startWrapperLeftCardText {
+    font-size: 18px;
+  }
+  .startWrapperRightImg {
+    height: 250px;
+  }
+  .startRegistrationHeader {
+    font-size: 24px;
+  }
+
+  .startRegistrationWrapper {
+    width: 100%;
+    max-width: 738px;
+    height: auto;
+    padding: 24px;
+  }
+  .contactsHeader {
+    font-size: 40px;
+  }
+  .contactsWrapper {
+    margin-bottom: 50px;
+  }
+  .joinHeader {
+    line-height: 110%;
+  }
+  .joinWrapper {
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .logo {
+    height: 36px;
+  }
+  .startHeader {
+    font-size: 40px;
+  }
+  .stickyHeaderWrapper {
+    height: 64px;
+    gap: 8px;
+  }
+  .stickyHeaderNav {
+    gap: 12px;
+    display: none; // прячем горизонтальное меню
+  }
+  .stickyHeaderNav a {
+    font-size: 16px;
+  }
+
+  // показываем бургер справа
+  .stickyHeaderBurger {
+    line-height: 0;
+    font-size: 0;
+    display: grid;
+    margin-left: auto;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+    row-gap: 4px;
+    column-gap: 8px;
+    justify-content: center; /* центрируем сетку по горизонтали */
+    align-content: center; /* центрируем сетку по вертикали   */
+    place-items: center;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .headerTitle {
+    font-size: 40px;
+    margin-bottom: 24px;
+  }
+  .headerText {
+    font-size: 18px;
+    margin-bottom: 24px;
+    width: 100%;
+  }
+  .headerSubtitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .headerMaskot {
+    max-width: 480px;
+  }
+
+  .startRegistrationHeader {
+    font-size: 24px;
+  }
+  .startRegistrationButton {
+    width: 100%;
+    max-width: 302px;
+  }
+
+  .contactsSubHeader {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .contactsWrapper {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  .startRegistrationWrapper {
+    width: 95%;
+    margin-bottom: 30px;
+  }
+  .startWrapperLeftImg {
+    width: 50px;
+  }
+  .contactsItem {
+  }
+  .contactsItemText {
+    height: auto;
+  }
+  .joinHeader {
+    font-size: 40px;
+  }
+
+  .joinSubHeader {
+    width: 100%;
+  }
+  .joinWrapper {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .stickyHeaderNav a {
+    font-size: 14px;
+  }
+  .headerWrapper {
+    padding-top: 5px;
+  }
+  .headerTitle {
+    font-size: 26px;
+  }
+  .headerSubtitle {
+    font-size: 22px;
+  }
+  .headerMaskot {
+    height: 250px;
+    max-width: 360px;
+  }
+  .headerButtonWrap {
+    flex-direction: column;
+  }
+  .headerPlayButton,
+  .headerHowButton {
+    width: 100%;
+  }
+  .startHeader {
+    font-size: 26px;
+  }
+  .startSubHeader {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  .startWrapperLeftCardTitle {
+    font-size: 26px;
+  }
+  .startWrapperRightImg {
+    width: 100%;
+    height: 140px;
+  }
+  .startRegistrationHeader {
+    font-size: 22px;
+  }
+  .contactsWrapper {
+    margin-bottom: 35px;
+  }
+  .contactsHeader {
+    font-size: 26px;
+  }
+  .contactsSubHeader {
+    font-size: 18px;
+  }
+
+  .contactsItem {
+    width: 100%;
+  }
+  .joinHeader {
+    font-size: 26px;
+  }
+  .joinSubHeader {
+    font-size: 18px;
+  }
+
+  .joinWrapper {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .joinButtonTg,
+  .joinButtonDiscord {
+    width: 100%;
+  }
+
+  .contactsItem {
+    padding: 30px;
+  }
+  .contactsItemText {
+    margin-bottom: 0;
+  }
+
+  .pageup {
+    width: 64px;
+    height: 64px;
+    bottom: 16px;
+    right: 16px;
+  }
+}

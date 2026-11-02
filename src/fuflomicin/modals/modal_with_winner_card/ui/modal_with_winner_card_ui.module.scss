@@ -1,0 +1,36 @@
+.winnerCard {
+  width: calc(100vw / (1920 / 350));
+  height: calc(100vw / (1920 / 497));
+
+  .answer {
+    font-family: Gilroy Regular;
+    color: rgba(34, 34, 34, 1);
+    font-size: 1.4em;
+    height: 80%;
+    line-height: 100%;
+
+    :global(.simplebar-track.simplebar-vertical) {
+      width: 5px;
+    }
+    :global(.simplebar-scrollbar::before) {
+      background-color: #fb856a;
+    }
+  }
+
+  .name {
+    color: #fb856a;
+    font-family: Gilroy Medium;
+    font-size: 1.2em;
+    max-width: 100%;
+  }
+
+  &.hff {
+    .answer {
+      font-family: 'Piazzolla', serif;
+    }
+
+    .name {
+      font-family: 'Piazzolla', serif;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.modal-wrapper {
+  position: fixed;
+  display: grid;
+  transition: all 1s ease;
+  z-index: 10;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  &_hide {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &_show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__modal-main {
+    display: flex;
+    position: relative;
+    transition: all 1s ease;
+    margin: auto;
+
+    &__close-button {
+      background: transparent;
+      position: absolute;
+      border: none;
+      right: 11px;
+      width: 25px;
+      padding: 0;
+      height: 25px;
+      top: 12px;
+      z-index: 12;
+      /*       @media (max-width: 500px) {
+        right: 0px;
+      } */
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

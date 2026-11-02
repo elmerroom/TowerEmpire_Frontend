@@ -1,0 +1,59 @@
+.timeLine {
+  --progress-height: 8px;
+  --after-width: 0%;
+
+  flex: 1;
+  height: var(--progress-height);
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  min-width: 200px;
+
+  &::before {
+    content: '';
+    display: block;
+    height: var(--progress-height);
+    width: 100%;
+    background-color: rgba(244, 228, 193, 0.3);
+    border-radius: 5px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    transition: width 0.2s linear;
+    background: linear-gradient(90deg, #ffd89b 0%, #f4e4c1 100%);
+    border-radius: 5px;
+    height: var(--progress-height);
+    width: var(--after-width);
+    box-shadow: 0 0 8px rgba(255, 216, 155, 0.6);
+  }
+
+  @media (max-width: 1024px) {
+    min-width: 150px;
+    --progress-height: 6px;
+  }
+
+  @media (max-width: 768px) {
+    min-width: 100px;
+    --progress-height: 5px;
+  }
+}
+
+@keyframes timelinePulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 transparent;
+  }
+  50% {
+    box-shadow: 0 0 6px 3px rgba(255, 216, 155, 0.8);
+  }
+}
+
+.pulse {
+  animation: timelinePulse 1s ease-in-out infinite;
+}

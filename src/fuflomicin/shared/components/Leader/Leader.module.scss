@@ -1,0 +1,56 @@
+.leader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &.hide {
+    opacity: 0;
+  }
+
+  .label {
+    margin-bottom: 0;
+    font-family: 'Nevduplenysh', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    color: #fffadd;
+  }
+
+  .name {
+    font-family: 'Gilroy Medium', sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: #fb856a;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 140px;
+  }
+
+  &.hff {
+    .label {
+      font-family: 'Piazzolla', serif;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 120%;
+    }
+
+    .name {
+      font-family: 'Piazzolla', serif;
+      font-weight: 800;
+      font-size: 20px;
+      line-height: 120%;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .label,
+    .name {
+      font-size: 16px;
+    }
+  }
+}

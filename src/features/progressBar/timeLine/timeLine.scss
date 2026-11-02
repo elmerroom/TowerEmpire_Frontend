@@ -1,0 +1,48 @@
+@use '/src/css/variables.scss' as *;
+
+.status-bar__time-line {
+  --progress-height: 0.7vh;
+  border-radius: 5px;
+  margin: 0;
+  width: 78.5%;
+  height: var(--progress-height);
+  appearance: none;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: '';
+    display: block;
+    height: var(--progress-height);
+    width: 100%;
+    background-color: #fefefe;
+    border-radius: 5px;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    display: block;
+    background-color: $color-gold;
+    border-radius: 5px;
+    height: var(--progress-height);
+    width: var(--after-width);
+  }
+  @media (max-width: 1024px) {
+    width: 25%;
+  }
+}
+// animation
+@keyframes timeline_pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 transparent;
+  }
+  50% {
+    box-shadow: 0 0 4px 2px rgba(255, 181, 70, 1);
+  }
+}
+
+.timeline_pulse {
+  animation: timeline_pulse 1s ease-in-out infinite;
+}

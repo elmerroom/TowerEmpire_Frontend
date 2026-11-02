@@ -1,0 +1,115 @@
+$chat-container-bg: rgba(11, 11, 11, 0.72);
+$chat-bg: rgba(25, 25, 25, 1);
+$accent: #ffb546;
+$text-white: rgba(254, 254, 254, 1);
+$text-muted: rgba(254, 254, 254, 0.25);
+
+.chatBtn {
+  background: $accent;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  &:hover {
+    filter: none;
+    background-color: #de9a35;
+    box-shadow: 0 0 14px rgba(255, 181, 70, 0.55);
+  }
+}
+
+.chatContainer {
+  background: $chat-container-bg;
+  height: 76vh;
+  max-height: 420px;
+  max-width: 390px !important;
+  padding: 18px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 13px;
+  box-shadow: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+
+  .closeButtonSVG {
+    fill: $text-white;
+  }
+
+  .upperContainer {
+    display: flex;
+    justify-content: center;
+
+    .title {
+      font-size: 29.05px;
+      color: #ffb546;
+      line-height: 100%;
+      font-family:
+        Baron Neue,
+        sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+
+    .hrLine {
+      display: none;
+    }
+  }
+
+  .innerContent {
+    margin-top: 4px;
+    flex: 2 2 auto;
+    max-height: 285px;
+    padding: 16px 18px;
+    background: $chat-bg;
+    border-radius: 10px;
+
+    .messages {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+
+      :global(.simplebar-track.simplebar-vertical) {
+        width: 5px;
+      }
+      :global(.simplebar-scrollbar::before) {
+        background-color: $accent;
+      }
+
+      .text {
+        color: $text-white;
+        margin-bottom: 12px;
+
+        .userName {
+          color: $accent;
+        }
+      }
+    }
+  }
+
+  .chatInput {
+    padding: 7px 10px;
+    border-radius: 10px;
+    background: $chat-bg;
+    input {
+      background-color: transparent;
+      width: 100%;
+      color: $text-white;
+      &::placeholder {
+        font-size: 16px;
+        font-family: Gilroy Medium;
+        letter-spacing: 0.02em;
+        color: $text-muted;
+      }
+    }
+
+    .emojiFaceSVG {
+      stroke: $accent;
+    }
+
+    .sendButtonSVG use {
+      fill: $accent;
+      color: $chat-bg;
+    }
+  }
+}

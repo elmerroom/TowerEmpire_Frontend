@@ -1,0 +1,43 @@
+.playerName {
+  transition: color 0.5s ease;
+
+  &.master {
+    color: #ffb546;
+    animation: masterHighlight 1.5s ease-out;
+  }
+
+  &.regular {
+    color: #ffffff;
+  }
+
+  &.currentPlayer {
+    color: #ffffff;
+    background-color: #313131;
+    border-radius: 4px;
+    padding: 0px 5px;
+  }
+}
+.socialWrapper {
+  display: flex;
+  flex-direction: column;
+}
+/* .d-flex flex-column players players__game w-100 h-100 */
+.offline {
+  opacity: 0.55;
+  filter: grayscale(1);
+}
+
+@keyframes masterHighlight {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.1);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+    transform: scale(1.05);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+    transform: scale(1);
+  }
+}

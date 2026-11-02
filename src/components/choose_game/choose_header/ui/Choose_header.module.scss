@@ -1,0 +1,76 @@
+.chooseHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  @media (max-width: 1024px) {
+    margin-bottom: 2rem;
+  }
+}
+
+.btnBack {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 1.25rem;
+  min-width: 160px;
+  height: 46px;
+  background: transparent;
+  border: 1px solid #4eb5b5;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+
+  @media (max-width: 992px) {
+    min-width: 140px;
+    height: 40px;
+  }
+  @media (max-width: 400px) {
+    min-width: 50px;
+    padding: 0;
+  }
+}
+
+.btnBack svg {
+  flex-shrink: 0;
+}
+
+.btnBack p {
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: 0.05em;
+  color: rgb(255, 255, 255);
+  @media (max-width: 48.5em) {
+    font-size: 18px;
+  }
+  @media (max-width: 400px) {
+    display: none;
+  }
+}
+
+h4 {
+  margin: 0;
+  line-height: 1;
+}
+
+.commercialChoose {
+  flex: 0 0 auto;
+}
+
+.commercialChoose button {
+  width: 86px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 992px) {
+    width: 70px;
+    height: 40px;
+  }
+}

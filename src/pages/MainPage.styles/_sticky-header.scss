@@ -1,0 +1,58 @@
+.stickyHeader {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: #152a36;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+  &Wrapper {
+    height: 75px;
+    max-width: 1185px;
+    margin: 0 auto;
+    padding: 14px 0px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &Nav {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+
+    a {
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 20px;
+      color: #fff;
+      font-family: 'Gilroy';
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.stickyHeader .left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 47px;
+  width: auto;
+  transition: all 0.3s ease;
+  filter: brightness(1);
+
+  &:hover {
+    filter: brightness(1.2) drop-shadow(0 0 5px #4eb5b5)
+      drop-shadow(0 0 10px #4eb5b5) drop-shadow(0 0 20px #4eb5b5);
+    transform: scale(1.05);
+  }
+}

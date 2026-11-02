@@ -1,0 +1,17 @@
+.progressBarWrapperLeft {
+  width: 60px;
+  background: url('/img/fufl/progressbarLeft.svg') no-repeat center center /
+    contain;
+}
+
+.progressBarWrapperRight {
+  width: 60px;
+  background: url('/img/fufl/progressbarRight.svg') no-repeat center center /
+    contain;
+}
+
+.progressBar {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: 2px solid #ecb353;
+  border-radius: 12px;
+}

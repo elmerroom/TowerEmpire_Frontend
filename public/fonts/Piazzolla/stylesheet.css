@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Piazzolla';
+  src: url('/fonts/Piazzolla/Piazzolla-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Piazzolla';
+  src: url('/fonts/Piazzolla/Piazzolla-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Piazzolla';
+  src: url('/fonts/Piazzolla/Piazzolla-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Piazzolla';
+  src: url('/fonts/Piazzolla/Piazzolla-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}

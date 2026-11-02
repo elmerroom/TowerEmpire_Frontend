@@ -1,0 +1,20 @@
+.waitingModalActions {
+  width: 382px;
+  max-width: 100%;
+  margin-inline: auto;
+
+  :global(.invite_wrapper),
+  :global(.invite_btn-wrapper) {
+    width: 100%;
+    display: flex;
+  }
+
+  :global(.invite_input) {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+.exitIcon {
+  flex-shrink: 0;
+}

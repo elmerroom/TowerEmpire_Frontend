@@ -1,0 +1,33 @@
+.card-container {
+  grid-area: top;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding-left: 2vw;
+
+  @media (max-width: 1024px) {
+    gap: 6px;
+    height: 55.7vh;
+  }
+}
+
+.card__top {
+  height: 40.2vh;
+  grid-column: span 6;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1vh 0.6vw;
+  padding-left: 0 !important;
+  align-items: end;
+  @media (max-width: 1024px) {
+    height: 55.7vh;
+  }
+
+  &:nth-child(5) {
+    padding-top: 20px;
+  }
+  @media (max-width: 1024px) {
+    gap: 6px;
+    transition: transform 0.5s ease-in-out;
+  }
+}

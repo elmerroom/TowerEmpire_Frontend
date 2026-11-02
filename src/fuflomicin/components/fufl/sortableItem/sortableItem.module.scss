@@ -1,0 +1,84 @@
+.container {
+  list-style: none;
+  position: relative;
+  .itemWrapper {
+    background-color: #f5ddb0;
+    cursor: pointer;
+    transition: transform 0.5s;
+    height: 40px;
+    padding: 0 16px;
+
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+
+    &__text {
+      font-family: Gilroy Medium;
+      font-size: 18px;
+      color: #222222;
+      line-height: 1;
+      display: flex;
+    }
+
+    .arrowWrapper::before {
+      content: '';
+      position: absolute;
+      inset: -12px;
+    }
+
+    .arrowWrapper {
+      position: relative;
+      margin-left: 11px;
+    }
+
+    .arrowSVG {
+      width: 10px;
+      height: 8px;
+      color: #c05151;
+      display: block;
+      cursor: pointer;
+    }
+
+    &__chosen {
+      outline: 2px solid #fb856a;
+      transform: scale(1.01);
+      -webkit-transform: scale(1.01);
+      -ms-transform: scale(1.01);
+    }
+  }
+
+  .dropdownList {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #e1ca9f;
+    z-index: 99;
+    min-width: 100%;
+    width: max-content;
+
+    .listContainer {
+      display: flex;
+      flex-direction: column;
+      max-height: 115px;
+      overflow-y: scroll;
+
+      li {
+        font-family: Gilroy Medium;
+        font-size: 18px;
+        color: #222222;
+        line-height: 100%;
+
+        width: 100%;
+        padding: 8px 16px;
+
+        &:hover {
+          background-color: #c051511a;
+        }
+      }
+
+      .selected {
+        color: #c05151;
+      }
+    }
+  }
+}

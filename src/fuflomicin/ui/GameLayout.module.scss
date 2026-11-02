@@ -1,0 +1,53 @@
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-image: url('/img/fufl_background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  position: relative;
+  width: 1420px;
+  border-radius: 25px;
+  padding: 32px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  gap: 2rem;
+}
+
+.cardsTopContainer {
+  grid-row: 1;
+  position: relative;
+}
+
+.timerWrapper {
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+}
+
+.leftContainer {
+  grid-column: 1 / span 3;
+  grid-row: 1 / -1;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.rightContainer {
+  grid-column: 4 / -1;
+  grid-row: 1 / -1;
+
+  display: grid;
+  grid-template-rows: 1fr 80px 1fr;
+  gap: 1rem;
+}

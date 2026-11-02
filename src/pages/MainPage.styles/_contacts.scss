@@ -1,0 +1,88 @@
+.contacts {
+  &Header {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 170%;
+    text-align: center;
+    color: #fff;
+  }
+  &SubHeader {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 133%;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: rgba(78, 181, 181, 0.75);
+    width: 750px;
+    margin: 0 auto;
+    margin-bottom: 77px;
+  }
+  &Wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 36px;
+    margin-bottom: 120px;
+  }
+  &Item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid #26414f;
+    border-radius: 20px;
+    width: 371px;
+    padding: 35px 10px 30px 10px;
+    text-align: center;
+    &Img {
+      width: 58px;
+      height: 58px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        cursor: pointer;
+        filter: brightness(1.2) drop-shadow(0 0 5px #4eb5b5)
+          drop-shadow(0 0 10px #4eb5b5) drop-shadow(0 0 15px #4eb5b5);
+      }
+    }
+    &Header {
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: 21px;
+      line-height: 133%;
+      letter-spacing: 0.04em;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    &Text {
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: 18px;
+      text-align: center;
+      color: #416374;
+      height: 42px;
+      margin-bottom: 40px;
+    }
+    &Link {
+      display: none;
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: 18px;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      text-align: center;
+      color: #4eb5b5;
+
+      max-width: 140px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}

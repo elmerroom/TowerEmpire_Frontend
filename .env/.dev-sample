@@ -1,0 +1,5 @@
+GENERATE_SOURCEMAP=false
+
+VITE_API_URL=http://localhost:8000
+VITE_WS_URL=ws://localhost:8000/ws/lobby/
+VITE_WS_CHAT_URL=ws://localhost:8000/ws/chat/

@@ -1,0 +1,30 @@
+.collapseWrap {
+  // overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    max-height 200ms ease,
+    opacity 200ms ease,
+    transform 200ms ease;
+}
+
+.open {
+  max-height: 240px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}

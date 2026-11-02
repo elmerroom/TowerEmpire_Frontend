@@ -1,0 +1,86 @@
+@use 'variables' as *;
+
+:root {
+  --font-heading: sans-serif;
+
+  /* Modal */
+  --button-text-color: #{$color-white};
+
+  /* Waiting modal timer */
+  --font-timer-size: 40px;
+
+  /* Invite link */
+  --invite-label-color: #4eb5b5;
+  --invite-input-bg: #11212a;
+  --invite-btn-bg: #4eb5b5;
+  --invite-btn-hover-bg: initial;
+  --invite-btn-shadow: rgba(78, 181, 181, 0.5);
+  --invite-success-color: #4eb5b5;
+}
+
+[data-game-mode='lobby'] {
+  /* Invite link */
+  --invite-label-color: #4eb5b5;
+  --invite-input-bg: #11212a;
+  --invite-btn-bg: #4eb5b5;
+  --invite-btn-hover-bg: initial;
+  --invite-btn-shadow: rgba(78, 181, 181, 0.5);
+  --invite-success-color: #4eb5b5;
+}
+
+[data-game-mode='fuflomicin'] {
+  --font-heading: 'Nevduplenysh', sans-serif;
+
+  /* Modal */
+  --button-text-color: #{$color-cream-light};
+
+  /* Waiting modal timer */
+  --font-timer-size: 48px;
+  --font-timer-color: #{$color-gray-900};
+
+  /* Invite link*/
+  --invite-label-color: #c05151;
+  --invite-input-bg: #e1ca9f;
+  --invite-btn-bg: #fb856a;
+  --invite-btn-hover-bg: #c05151;
+  --invite-btn-shadow: rgba(251, 133, 106, 0.55);
+  --invite-success-color: #fb856a;
+}
+
+[data-game-mode='hff'] {
+  --font-heading: 'Stengazeta', sans-serif;
+
+  /* Modal */
+  --button-text-color: #{$color-cream-light};
+
+  /* Waiting modal timer */
+  --font-timer-size: 48px;
+  --font-timer-color: #{$color-gray-900};
+
+  /* Invite link*/
+  --invite-label-color: #be3f3b;
+  --invite-input-bg: #c0b299;
+  --invite-btn-bg: #be3f3b;
+  --invite-btn-hover-bg: #db4b46;
+  --invite-btn-shadow: rgba(251, 133, 106, 0.55);
+  --invite-success-color: #be3f3b;
+}
+
+[data-game-mode='bj'] {
+  --font-heading: 'Baron Neue', sans-serif;
+
+  /* Modal */
+  --button-text-color: #{$color-gray-900};
+
+  /* Waiting modal timer */
+  --font-timer-size: 40px;
+  --font-timer-color: #{$color-white};
+
+  /* Invite link*/
+  --invite-label-color: #ffb546;
+  --invite-input-bg: #191919;
+  --invite-btn-bg: #ffb546;
+  --invite-btn-hover-bg: #e5951c;
+  --invite-btn-shadow: rgba(255, 181, 70, 0.55);
+  --invite-success-color: #ffb546;
+}

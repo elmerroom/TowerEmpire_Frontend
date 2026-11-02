@@ -1,0 +1,516 @@
+// player.module.scss
+
+// --- Variables ---
+$lobby-bg: #121f26; // Deep dark slate
+$lobby-avatar-bg: #20323f; // Slightly lighter for avatar circle
+$text-cyan: #55cccc; // Bright cyan for text
+$border-cyan: #55cccc; // Border color for "Me"
+$icon-gold: #f5d659; // Host crown
+$icon-red: #ff5e5e; // Kick X
+$icon-white: #ffffff; // Promote crown
+$fufl-accent-red: #c05151; // Accent color for Fuflomicin (Master/Host)
+
+// --- Main Card Container (Lobby) ---
+.lobbyCard {
+  --player-nickname-color: #55cccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $lobby-bg;
+  border-radius: 20px; // Rounded "pill" look from screenshots
+  padding: 8px 16px;
+  margin-bottom: 8px;
+  min-height: 72px; // Substantial height from screenshots
+  border: 2px solid transparent; // Reserve space for border
+  transition: all 0.2s ease;
+
+  // "Me" State (Screenshot 3)
+  &.isMe {
+    border-color: $border-cyan;
+  }
+
+  &.isMaster {
+    border-color: $icon-gold;
+    box-shadow: 0 0 10px rgba($icon-gold, 0.2);
+  }
+
+  // Game variant placeholder (handled separately, kept for safety)
+  &.game {
+    border-radius: 12px;
+    background: rgba(20, 20, 25, 0.6);
+    // ... existing game styles would go here if merged
+  }
+}
+
+// --- Left Side: Avatar + Name ---
+.leftSection {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.lobbyAvatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: $lobby-avatar-bg;
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Typography for the Initial letter inside avatar
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: var(--player-nickname-color); // Sync initial with nickname color
+  flex-shrink: 0;
+  margin-right: 16px;
+
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    border-color: #4eb5b5;
+  }
+}
+
+.lobbyName {
+  font-size: 1.25rem; // Large readable text
+  color: var(--player-nickname-color);
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// --- Right Side: Icons/Actions ---
+.rightSection {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 40px; // Ensure space for icons
+  gap: 8px;
+}
+
+// The big gold crown for the Host (Screenshot 1 & 3)
+.hostCrownIcon {
+  width: 32px;
+  height: 32px;
+  color: $icon-gold;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+// Container for Host Actions (Kick + Promote) (Screenshot 2 & 4)
+.actionsStack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; // Space between X and Crown
+}
+
+.actionBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+
+  &:hover {
+    filter: none;
+    transform: scale(1.15);
+    box-shadow: none;
+    background: none;
+  }
+}
+
+.kickIcon {
+  width: 15px;
+  height: 15px;
+  color: $icon-red;
+  stroke-width: 3px; // Make the X thicker
+}
+
+.promoteIcon {
+  width: 18px;
+  height: 18px;
+  color: $icon-white;
+}
+
+// --- Game-specific additions ---
+.game {
+  background: rgba(20, 20, 25, 0.6);
+  border-radius: 12px;
+  min-height: 56px;
+  padding: 8px 12px;
+}
+
+.playerName {
+  color: $text-cyan;
+  font-weight: 500;
+}
+
+.hostCrownIconSmall {
+  width: 22px;
+  height: 22px;
+  margin-left: 6px;
+}
+
+.roleTag {
+  margin-left: 8px;
+  padding: 2px 8px;
+  border: 1px solid $icon-gold;
+  border-radius: 12px;
+  color: $icon-gold;
+  font-size: 0.75rem;
+}
+
+.scoreBadge {
+  min-width: 32px;
+  padding: 4px 10px;
+  background: #0c171d;
+  border: 1px solid $text-cyan;
+  border-radius: 12px;
+  color: $text-cyan;
+  text-align: center;
+  font-weight: 600;
+}
+
+// --- Game row styling to match scoreboard look ---
+.gameRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  color: #d7d9dd;
+  gap: 8px;
+}
+
+.gameRowFufl {
+  display: flex;
+  align-items: center;
+  color: #222222;
+  text-align: left;
+  gap: 1rem;
+  padding: 5px 8px;
+  border-right: 0.5px solid rgba(168, 152, 121, 1);
+  border-bottom: 0.5px solid rgba(168, 152, 121, 1);
+  border-left: 0.5px solid rgba(168, 152, 121, 1);
+}
+
+.gameRowFufl.isMaster {
+  background: transparent;
+}
+
+.gameLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.gameCrownFM {
+  width: 18px;
+  height: 18px;
+  color: rgba(69, 68, 66, 0.3) !important;
+  flex-shrink: 0;
+}
+
+.gameCrownBJ,
+.gamePromoteIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.gameCrownBJ {
+  opacity: 0.7;
+}
+
+.gameBotIconBJ {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.gameCrownHost {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.gameRank {
+  font-weight: 700;
+  color: #c0c2c5;
+}
+
+.gameName {
+  font-size: 1.05rem;
+  color: #e4e6ea;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gameName.isCurrent {
+  color: #ffb546;
+}
+
+.gameRowFufl .gameRank,
+.gameRowFufl .gameName,
+.gameRowFufl .gameScore {
+  color: #222222;
+  font-family: Gilroy Medium;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  font-size: 16px;
+  /* Компенсация внутренних метрик шрифта Gilroy - текст визуально смещён вверх */
+  padding-top: 0.09em;
+}
+
+.gameRowFufl .gameRank {
+  font-family: Gilroy;
+}
+
+.gameRowFufl .gameRank.isCurrent,
+.gameRowFufl .gameName.isCurrent,
+.gameRowFufl .gameScore.isCurrent {
+  color: $fufl-accent-red;
+}
+
+.gameRowFufl .gameLeft {
+  gap: 6px;
+}
+
+.gameRowFufl .gameNameMaster {
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba($fufl-accent-red, 0.25);
+  animation: fuflLeaderNameGlow 1.8s ease-in-out infinite;
+}
+
+.gameRowFufl .gameScoreHost {
+  color: #222222; // в фуфле хост не выделяем золотом
+}
+
+.gameNameHost {
+  color: #f5d659;
+}
+
+.gameNameMaster {
+  color: #ff9f43;
+  font-weight: 700;
+}
+
+.gameRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gameCross {
+  color: #ff5e5e;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.gameScore {
+  font-weight: 700;
+  color: #e4e6ea;
+  min-width: 18px;
+  text-align: right;
+}
+
+.gameScoreHost {
+  color: #f5d659;
+}
+
+// --- Game Actions Stack (for host controls in game) ---
+
+.gameActionBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+
+  &:hover {
+    filter: none;
+    transform: scale(1.2);
+    box-shadow: none;
+    background: none;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: none !important;
+  }
+}
+
+.gamePromoteIcon {
+  color: $icon-white;
+}
+
+.gameKickIcon {
+  width: 13px;
+  height: 13px;
+  color: $icon-red;
+  stroke-width: 3px;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Fuflomicin kick (red X button on the right)
+// ─────────────────────────────────────────────────────────────────────────────
+
+.fuflKickBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    filter: none;
+    box-shadow: none;
+    transform: scale(1.2);
+  }
+}
+
+.fuflCrownBtn,
+.fuflKickBtn,
+.actionBtn {
+  // отключение голубого фона
+  &:hover {
+    transform: scale(1.2);
+    background: none;
+  }
+}
+
+.fuflCrownBtn,
+.fuflKickBtn,
+.actionBtn {
+  // отключение голубого фона
+  &:hover {
+    transform: scale(1.2);
+    background: none;
+  }
+}
+
+.fuflKickIcon {
+  width: 13px;
+  height: 13px;
+  fill: red !important;
+}
+
+.fuflCrownBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Skeleton / loading state
+// ─────────────────────────────────────────────────────────────────────────────
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeletonContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.skeletonLobby {
+  min-height: 72px;
+  background: #121f26;
+  border: 2px solid transparent;
+}
+
+.skeletonGame {
+  min-height: 36px;
+  border-radius: 8px;
+  background: rgba(26, 46, 58, 0.5);
+}
+
+.skeletonFufl {
+  min-height: 32px;
+  border-radius: 0;
+  border-bottom: 0.5px solid rgba(168, 152, 121, 0.3);
+  background: rgba(168, 152, 121, 0.04);
+}
+
+.skeletonBackground {
+  position: absolute;
+  inset: 0;
+  background: inherit;
+}
+
+.skeletonOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.06) 50%,
+    transparent 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
+@keyframes fuflLeaderNameGlow {
+  0% {
+    text-shadow: 0 0 8px rgba($fufl-accent-red, 0.18);
+    opacity: 0.9;
+  }
+  50% {
+    text-shadow: 0 0 14px rgba($fufl-accent-red, 0.4);
+    opacity: 1;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba($fufl-accent-red, 0.18);
+    opacity: 0.9;
+  }
+}
+
+@keyframes fuflLeaderRowPulse {
+  0% {
+    background: rgba(255, 159, 67, 0.1);
+  }
+  50% {
+    background: rgba(255, 159, 67, 0.16);
+  }
+  100% {
+    background: rgba(255, 159, 67, 0.1);
+  }
+}

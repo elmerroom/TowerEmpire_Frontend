@@ -1,0 +1,17 @@
+@use '/src/css/variables.scss' as *;
+
+body:has(.evil-cards-page) .modal-game-help__text {
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-gold !important;
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 100px;
+    background: #26414f;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 100px;
+  }
+}

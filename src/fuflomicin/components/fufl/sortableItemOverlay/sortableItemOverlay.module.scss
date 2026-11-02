@@ -1,0 +1,18 @@
+.container {
+  background-color: #f5ddb0;
+  cursor: pointer;
+  transition: transform 0.5s;
+  list-style: none;
+  max-height: 45px;
+  min-height: 45px;
+
+  &__text {
+    font-family: Gilroy Medium;
+    font-size: 18px;
+    color: #000000;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

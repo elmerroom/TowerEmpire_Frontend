@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Nevduplenysh';
+  src: url('/fonts/Nevduplenysh/Nevduplenysh-Regular.eot');
+  src:
+    local('Nevduplenysh'),
+    local('Nevduplenysh'),
+    url('/fonts/Nevduplenysh/Nevduplenysh-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('/fonts/Nevduplenysh/Nevduplenysh-Regular.woff') format('woff'),
+    url('/fonts/Nevduplenysh/Nevduplenysh-Regular.woff2') format('woff2'),
+    url('/fonts/Nevduplenysh/Nevduplenysh-Regular.otf') format('opentype'),
+    url('/fonts/Nevduplenysh/Nevduplenysh-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

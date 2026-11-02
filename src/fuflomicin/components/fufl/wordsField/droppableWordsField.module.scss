@@ -1,0 +1,36 @@
+.wordsFieldWrapper {
+  display: flex;
+  margin-right: 46px;
+
+  .wordsFieldMain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    // padding-right: 90px;
+
+    .wordsContainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      align-items: center;
+      justify-content: center;
+      margin: 0 46px;
+    }
+
+    &__disabled {
+      pointer-events: none;
+      opacity: 0.6;
+      filter: grayscale(0.4) brightness(0.9);
+      cursor: not-allowed;
+    }
+  }
+
+  .wordsFieldSidebar {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 10px 0;
+    justify-content: space-around;
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noFallthroughCasesInSwitch": true,
+    "useDefineForClassFields": true,
+
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+
+    "allowJs": true, // можно держать .js рядом с .ts
+    "checkJs": false, // на старте не проверяем JSDoc-типизацию в .js
+    "noEmit": true,
+
+    "ignoreDeprecations": "5.0",
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"]
+    },
+
+    "types": ["vite/client", "vitest"]
+  },
+  "include": [
+    "src",
+    "vite.config.*",
+    "vitest.config.*",
+    "env.d.ts",
+    "vite-env.d.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
+}

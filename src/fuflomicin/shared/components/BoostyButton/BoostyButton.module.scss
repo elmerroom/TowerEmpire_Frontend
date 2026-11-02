@@ -1,0 +1,29 @@
+.boostyButton {
+  width: 70px;
+  height: 50px;
+  border: none;
+  border-radius: 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background: #ef7829;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    filter: none;
+    background-color: #ec9054;
+    box-shadow: 0 0 14px rgba(251, 133, 106, 0.55);
+  }
+
+  @media (max-width: 780px) {
+    width: 50px;
+    bottom: 0.75rem;
+    right: 0.75rem;
+  }
+}
+
+.svg {
+  width: 30px;
+  height: 36px;
+}

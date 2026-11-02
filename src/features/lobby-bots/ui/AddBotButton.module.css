@@ -1,0 +1,49 @@
+.addBotContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 8px 0;
+}
+
+.addBotBtn {
+  background: transparent;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  height: 48px;
+  padding: 0 16px;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: 400;
+}
+
+.addBotBtn:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.addBotBtn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.addBotBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.icon {
+  font-size: 16px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}

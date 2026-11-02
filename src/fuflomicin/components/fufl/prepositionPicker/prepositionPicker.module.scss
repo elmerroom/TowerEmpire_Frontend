@@ -1,0 +1,47 @@
+.container {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.4s ease;
+
+  &__disabled {
+    pointer-events: none;
+  }
+
+  &__button {
+    height: 40px;
+    width: 121px;
+    background-color: rgba(192, 81, 81, 1);
+    color: rgba(255, 250, 221, 1);
+    font-family: Gilroy Medium;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  &__buttonHidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-4px);
+  }
+
+  &__picker {
+    position: absolute;
+    bottom: 48px;
+    right: 0;
+    z-index: 999;
+    padding: 16px;
+    max-height: 420px;
+    width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
+    border-radius: 16px;
+    background-color: rgba(68, 59, 48, 0.9);
+  }
+}

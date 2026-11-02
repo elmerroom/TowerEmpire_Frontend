@@ -1,0 +1,68 @@
+.game-card-evil {
+  background: #222222;
+  height: 30.1vh;
+  border: 1.5px solid #ffb546;
+  border-radius: 15px;
+  word-wrap: break-word;
+  padding: 5vh 0.25vw 5vh 1.25vw;
+}
+@media (max-width: 1024px) {
+  .game-card-evil {
+    height: 33.85vh;
+    padding: 10px 0 10px 10px;
+  }
+}
+
+.logo {
+  width: 100%;
+  height: 8vh;
+  background-image: url(/img/evil-cards-logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media (max-width: 1024px) {
+  .logo {
+    width: 44%;
+    height: 34px;
+    background-image: url(/img/logo-mobile.png);
+    background-size: contain;
+  }
+}
+
+.game-card-evil__wrapper {
+  height: 100%;
+  overflow: auto;
+  padding-right: 1vw;
+}
+.game-card-evil__wrapper::-webkit-scrollbar-thumb {
+  background-color: #ffb546;
+}
+
+/* .game-card-evil__horns {
+  position: absolute;
+  z-index: 4;
+  top: -40px;
+  left: 15.5%;
+}
+
+.game-card-evil__tail {
+  position: absolute;
+  z-index: 1;
+  bottom: 5px;
+  left: 0;
+} */
+.game-card-evil__text {
+  color: #fefefe;
+  font-family: Gilroy;
+  font-size: 1.05em;
+  font-weight: 500;
+  line-height: 19.96px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+@media (max-width: 1024px) {
+  .game-card-evil__text {
+    font-size: 0.72em;
+    line-height: 1.31em;
+  }
+} /*# sourceMappingURL=game-card-evil.css.map */

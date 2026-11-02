@@ -1,0 +1,46 @@
+@use '/src/css/variables.scss' as *;
+
+.status-bar__round {
+  &--wrap {
+    display: flex;
+    align-items: center;
+  }
+  h6 {
+    color: $color-gold;
+    font-size: clamp(0.799em, 2.23vh, 1.14em);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-align: left;
+    margin-bottom: 0;
+  }
+  span {
+    color: $color-white;
+    font-size: clamp(0.799em, 2.23vh, 1.14em);
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: 0.02em;
+  }
+  @media (max-width: 1024px) {
+    order: -1;
+    h6 {
+      line-height: 10px;
+      color: $color-gold;
+    }
+    span {
+      line-height: 10px;
+      color: #fefefe;
+    }
+  }
+  @media (max-height: 600px) {
+    h6 {
+      font-size: 12px;
+      line-height: 10px;
+      color: $color-gold;
+    }
+    span {
+      font-size: 10px;
+      line-height: 10px;
+      color: #fefefe;
+    }
+  }
+}

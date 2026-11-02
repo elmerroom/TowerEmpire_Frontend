@@ -1,0 +1,112 @@
+.player-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 4px 20px 4px 9px;
+  border-radius: 6px;
+  gap: 10px;
+  font-family: Gilroy Medium;
+
+  &:nth-child(-n + 3) {
+    height: 48px;
+    font-family: Semi Bold;
+    .player-card_avatar {
+      display: block;
+      font-size: 28px;
+      width: 40px;
+      border-radius: 50%;
+      background-color: #333333;
+      color: #191919;
+    }
+    .player-card_trophy {
+      font-size: 25px;
+    }
+    .player-card_score {
+      font-size: 20px;
+    }
+  }
+
+  &:nth-child(1) {
+    background-color: #333333;
+    .player-card_avatar {
+      color: #333333;
+      background-color: #191919;
+    }
+    .player-card_nick {
+      font-family: Gilroy Medium;
+      font-size: 20px;
+      color: #ffb546;
+      @media (max-width: 940px) {
+        font-size: 14px;
+        line-height: 99%;
+        letter-spacing: 0.02em;
+      }
+    }
+  }
+  &:nth-child(2) {
+    .player-card_trophy {
+      color: #ccdedb;
+    }
+  }
+  &:nth-child(3) {
+    .player-card_trophy {
+      color: #a05d37;
+    }
+  }
+
+  &_trophy {
+    width: 41px;
+    @media (max-width: 940px) {
+      font-weight: 700;
+      font-size: 18px !important;
+      line-height: 78%;
+      letter-spacing: 0.02em;
+      height: 21px;
+    }
+  }
+  &_avatar {
+    display: none;
+    @media (max-width: 940px) {
+      height: 26px;
+      width: 26px !important;
+      font-size: 24px;
+      line-height: 100%;
+      letter-spacing: 0.02em;
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+  &_nick {
+    flex: 1;
+    min-width: 0;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fefefe;
+    @media (max-width: 940px) {
+      font-size: 12px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 117%;
+      letter-spacing: 0.02em;
+      color: #fefefe;
+    }
+  }
+  &_score {
+    margin-left: auto;
+    font-size: 18px;
+    color: #fefefe;
+    @media (max-width: 940px) {
+      font-weight: 700 !important;
+      font-size: 14px !important;
+      line-height: 100% !important;
+      letter-spacing: 0.02em !important;
+    }
+  }
+
+  @media (max-width: 940px) {
+    height: 32px !important;
+  }
+}

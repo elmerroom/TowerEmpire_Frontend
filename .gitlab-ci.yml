@@ -1,0 +1,152 @@
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH != "develop" && $CI_COMMIT_BRANCH != "main" && $CI_PIPELINE_SOURCE != "merge_request_event"
+      when: never
+    - when: always
+
+variables:
+  IMAGE_TAG: $CI_COMMIT_REF_NAME
+  IMAGE_NAME: $CI_REGISTRY_IMAGE
+
+stages:
+  - linting
+  - build
+  - deploy
+
+build_dev_image:
+  rules:
+    - if: $CI_COMMIT_BRANCH != "main"
+  tags:
+    - dev
+    - remote
+    - beget
+    - shell
+  stage: build
+  before_script:
+    - df -h 
+    - docker system prune -f
+    - df -h 
+  script:
+    - echo "$CI_COMMIT_SHA" && echo "$CI_COMMIT_SHORT_SHA"
+    - docker build . -t $IMAGE_NAME:${IMAGE_TAG//\//-} -t $IMAGE_NAME:$CI_COMMIT_SHORT_SHA -t $IMAGE_NAME:$CI_COMMIT_SHA -f ./compose/dev/nginx/Dockerfile
+
+build_prod_image:
+  rules:
+    # - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    #   when: manual
+    - if: $CI_COMMIT_BRANCH == "main"
+  tags:
+    - dev
+    - remote
+    - beget
+    - shell
+  stage: build
+  before_script:
+    - df -h 
+    - docker system prune -f
+    - df -h 
+  script:
+    - echo "$CI_COMMIT_SHA" && echo "$CI_COMMIT_SHORT_SHA"
+    - docker build . -t $IMAGE_NAME:${IMAGE_TAG//\//-} -t $IMAGE_NAME:$CI_COMMIT_SHORT_SHA -t $IMAGE_NAME:$CI_COMMIT_SHA -f ./compose/prod/nginx/Dockerfile
+
+push_dev_image:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+    - if: $CI_COMMIT_BRANCH == "develop"
+  tags:
+    - dev
+    - remote
+    - beget
+    - shell
+  stage: build
+  needs:
+    - build_dev_image
+  before_script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login $CI_REGISTRY -u $CI_REGISTRY_USER --password-stdin
+  script:
+    - docker push $IMAGE_NAME:${IMAGE_TAG//\//-}
+    - docker push $IMAGE_NAME:$CI_COMMIT_SHORT_SHA
+    - docker push $IMAGE_NAME:$CI_COMMIT_SHA
+
+push_prod_image:
+  rules:
+    # - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    #   when: manual
+    - if: $CI_COMMIT_BRANCH == "main"
+  tags:
+    - dev
+    - remote
+    - beget
+    - shell
+  stage: build
+  needs:
+    - build_prod_image
+  before_script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login $CI_REGISTRY -u $CI_REGISTRY_USER --password-stdin
+  script:
+    - docker push $IMAGE_NAME:${IMAGE_TAG//\//-}
+    - docker push $IMAGE_NAME:$CI_COMMIT_SHORT_SHA
+    - docker push $IMAGE_NAME:$CI_COMMIT_SHA
+
+deploy_develop:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: manual
+    - if: $CI_COMMIT_BRANCH == "develop"
+  tags:
+    - dev
+    - remote
+    - beget
+    - shell
+  stage: deploy
+  before_script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login $CI_REGISTRY -u $CI_REGISTRY_USER --password-stdin
+    - if [ ! -z "`docker ps -a | grep frontend- | cut -c -14`" ]; then docker rm --force `docker ps -a | grep frontend- | cut -c -14`; fi
+  script:
+    - docker compose -f compose.dev.yaml up -d
+
+deploy_prod:
+  rules:
+    # - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    #   when: manual
+    - if: $CI_COMMIT_BRANCH == "main"
+  tags:
+    - dev
+    - remote
+    - beget
+    - shell
+  stage: deploy
+  before_script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login $CI_REGISTRY -u $CI_REGISTRY_USER --password-stdin
+    - if [ ! -z "`docker ps -a | grep front-prod | cut -c -14`" ]; then docker rm --force `docker ps -a | grep front-prod | cut -c -14`; fi
+  script:
+    - cp compose.prod.yaml /opt/stacks/front-prod/
+    - docker compose -f /opt/stacks/front-prod/compose.prod.yaml up -d
+
+update_helm:
+  rules:
+  - if: '$CI_PIPELINE_SOURCE == "merge_request_event"' 
+    when: manual
+  - if: $CI_COMMIT_BRANCH == "develop"
+  variables:
+    USER: Serg
+    EMAIL: ne.stol.vagno.dlq.tebq@gmail.com
+  tags:
+  - dev
+  - remote
+  - beget
+  - shell
+  stage: deploy
+  script:
+    - 'echo "SERG_TOKEN is set: ${#SERG_TOKEN}"'
+    - git clone https://oauth2:${SERG_TOKEN}@git.legalloli.net/tower-empire/k8s.git
+    - git config --local user.email "$EMAIL"
+    - git config --local user.name "$USER"
+    - cd ./k8s/
+    - 'sed -i -e "s|containers_image:.*|containers_image: $IMAGE_NAME:$CI_COMMIT_SHA|" helm/TowerEmpire-Frontend/values.yaml'
+    - cat helm/TowerEmpire-Frontend/values.yaml
+    - git checkout -B main origin/main
+    - git add helm/TowerEmpire-Frontend/values.yaml
+    - git commit -m "up front"
+    - git push origin main

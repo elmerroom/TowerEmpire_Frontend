@@ -1,0 +1,135 @@
+$chat-container-bg: #152a36;
+$accent: #4eb5b5;
+$text-white: #fefefe;
+$text-muted: rgba(38, 65, 79, 1);
+
+.chatBtn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: $accent;
+  &:hover {
+    background-color: #56c7c7;
+  }
+  @media (max-width: 61.875em) {
+    position: fixed;
+    max-width: 100% !important;
+  }
+}
+
+.chatContainer {
+  background: $chat-container-bg;
+  min-height: 40vh;
+  max-height: 660px;
+  max-width: 435px !important;
+  min-width: 300px;
+  gap: 19px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 22px 24px 16px !important;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  z-index: 99;
+
+  @media (max-width: 83.1875em) {
+    max-width: 100% !important;
+  }
+
+  @media (max-width: 39.8125em) {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 50vh;
+  }
+
+  .closeButton {
+    display: none;
+    @media (max-width: 83.1875em) {
+      display: block;
+    }
+  }
+
+  .closeButtonSVG {
+    fill: $text-white;
+  }
+
+  .upperContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+    .title {
+      font-size: 22px;
+      color: $text-white;
+      line-height: 100%;
+      font-family:
+        Baron Neue,
+        sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+
+    .hrLine {
+      color: $text-muted;
+      width: 80%;
+      height: 2px;
+    }
+  }
+
+  .innerContent {
+    margin-top: 4px;
+    flex: 2 2 auto;
+    max-height: 81%;
+
+    .messages {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+
+      :global(.simplebar-track.simplebar-vertical) {
+        width: 5px;
+      }
+      :global(.simplebar-scrollbar::before) {
+        background-color: $accent;
+      }
+
+      .text {
+        color: $text-white;
+        margin-bottom: 12px;
+
+        .userName {
+          color: $accent;
+        }
+      }
+    }
+  }
+
+  .chatInput {
+    padding: 7px 10px 7px 18px;
+    border-radius: 10px;
+    background-color: #11212a;
+    input {
+      background-color: transparent;
+      width: 100%;
+      color: $text-white;
+      &::placeholder {
+        font-size: 16px;
+        font-family: Gilroy Medium;
+        letter-spacing: 0.02em;
+        color: $text-muted;
+      }
+    }
+
+    .emojiFaceSVG {
+      stroke: $accent;
+    }
+
+    .sendButtonSVG use {
+      fill: $accent;
+      color: #11212a;
+    }
+  }
+}

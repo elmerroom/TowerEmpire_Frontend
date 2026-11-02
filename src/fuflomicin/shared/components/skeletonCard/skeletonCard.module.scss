@@ -1,0 +1,43 @@
+.skeletonCard {
+  background-color: rgba(245, 221, 176, 0.4); // #f5ddb0 with opacity
+  height: 40px;
+  width: 140px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+  &.button {
+    background-color: rgba(
+      192,
+      81,
+      81,
+      0.4
+    ); // Muted red for preposition button
+    width: 121px; // Exact width from prepositionPicker
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 100%
+    );
+    animation: shimmer 1.8s infinite ease-in-out;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}

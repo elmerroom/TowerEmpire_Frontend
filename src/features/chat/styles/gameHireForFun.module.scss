@@ -1,0 +1,130 @@
+$chat-container-bg: rgba(176, 145, 104, 0.9);
+$chat-bg: #ded0b9;
+$accent: #be3f3b;
+$text-dark: #222222;
+$text-muted: #42423d;
+$title-color: #fffadd;
+
+.chatBtn {
+  position: static;
+  background: transparent;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+  outline: none !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  &:focus,
+  &:focus-visible {
+    outline: none !important;
+  }
+  &:hover {
+    background: transparent;
+    box-shadow: none;
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
+  }
+}
+
+.chatContainer {
+  background: $chat-container-bg;
+  height: 76vh;
+  max-height: 600px;
+  width: 392px;
+  padding: 32px 16px 24px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+
+  .closeButtonSVG {
+    fill: $text-dark;
+  }
+
+  .upperContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+
+    .title {
+      font-size: 32px;
+      color: $title-color;
+      line-height: 100%;
+      font-family: Stengazeta, sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+
+    .hrLine {
+      color: $accent;
+      width: 80%;
+      height: 2px;
+    }
+  }
+
+  .innerContent {
+    margin-top: 4px;
+    flex: 2 2 auto;
+    max-height: 440px;
+    padding: 16px;
+    background: $chat-bg;
+    border-radius: 12px;
+
+    .messages {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+
+      :global(.simplebar-track.simplebar-vertical) {
+        width: 5px;
+      }
+      :global(.simplebar-scrollbar::before) {
+        background-color: $accent;
+      }
+
+      .text {
+        color: $text-dark;
+        margin-bottom: 12px;
+        font-family: Piazzolla, sans-serif;
+        font-weight: 500;
+        .userName {
+          color: $accent;
+        }
+      }
+    }
+  }
+
+  .chatInput {
+    padding: 6px 16px;
+    border-radius: 12px;
+    background: $chat-bg;
+    input {
+      background-color: transparent;
+      width: 100%;
+      color: $text-dark;
+      font-family: Piazzolla, sans-serif;
+      font-weight: 600;
+      &::placeholder {
+        font-size: 16px;
+        letter-spacing: 0.02em;
+        color: $text-muted;
+      }
+    }
+
+    .emojiFaceSVG {
+      stroke: $accent;
+    }
+
+    .sendButtonSVG use {
+      fill: $accent;
+      color: $chat-bg;
+    }
+  }
+}

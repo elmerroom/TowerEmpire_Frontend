@@ -1,0 +1,42 @@
+.nf-image {
+  width: 50%;
+  @media (max-width: 576px) {
+    width: 70%;
+  }
+}
+
+.nf-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  @media (max-width: 576px) {
+    padding: 20px;
+    flex-direction: column;
+  }
+}
+.nf-left {
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 20px;
+    }
+  }
+  @media (max-width: 576px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  span {
+    white-space: nowrap;
+  }
+}
+
+.nf-button {
+  @media (max-width: 576px) {
+    padding: 7px;
+    margin-bottom: 20px;
+  }
+  padding: 10px;
+  margin-top: 30px;
+}

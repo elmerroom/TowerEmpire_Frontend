@@ -1,0 +1,37 @@
+.vacancy {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.vacancyLabel,
+.vacancyName {
+  font-family: 'Piazzolla', serif;
+  font-weight: 400;
+  font-size: 40px;
+  white-space: nowrap;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: #be3f3b;
+  margin: 0 0 0.5rem;
+  /* Компенсация внутренних метрик шрифта */
+  // padding-top: 0.2em;
+}
+
+.vacancyName {
+  color: #222222;
+}
+
+.frameSVGLeft,
+.frameSVGRight {
+  position: absolute;
+  height: 48px;
+  width: 29px;
+}
+.frameSVGLeft {
+  left: -40px;
+}
+
+.frameSVGRight {
+  right: -40px;
+}

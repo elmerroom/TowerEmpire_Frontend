@@ -1,0 +1,85 @@
+.headerWrap {
+  align-items: center;
+  gap: 18px;
+}
+
+.hrLine {
+  color: #26414f;
+  width: 80%;
+  margin: 24px auto;
+}
+
+.formSelect {
+  height: 45px;
+  padding-top: 7px !important;
+  text-align: center;
+  font-size: 22px !important;
+  font-family: Gilroy Regular;
+
+  @media (max-width: 48.5em) {
+    font-size: 20px !important;
+  }
+}
+
+.players {
+  font-size: 22px;
+  font-family: Gilroy Regular;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  background-color: #152a36;
+  padding: 7.1px 0 7.1px 0;
+  @media (max-width: 48.5em) {
+    font-size: 20px;
+  }
+}
+.offline {
+  opacity: 0.55;
+  filter: grayscale(1);
+}
+.playersNum {
+  color: #ffb546 !important;
+}
+
+.label {
+  font-size: 20px;
+}
+
+.locker {
+  width: 18px;
+  height: 18px;
+}
+
+.playersList {
+  max-height: 300px;
+  @media (max-height: 640px) {
+    max-height: 180px;
+  }
+  :global(.simplebar-content) {
+    padding: 0 10px !important;
+  }
+  :global(.simplebar-scrollbar::before) {
+    background-color: #4eb5b5;
+    border-radius: 4px;
+  }
+  :global(.simplebar-scrollbar.simplebar-visible::before) {
+    opacity: 1;
+  }
+  :global(.simplebar-track.simplebar-vertical) {
+    width: 4px;
+    background: transparent;
+  }
+}
+
+.playersWrapper {
+  width: 100%;
+}
+
+.btnSubmit {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: Gilroy Regular;
+}

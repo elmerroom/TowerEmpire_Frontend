@@ -1,0 +1,22 @@
+.buyer {
+  display: flex;
+  align-items: center;
+}
+
+.buyerLabel,
+.buyerName {
+  font-family: Nevduplenysh;
+  font-weight: 400;
+  font-size: clamp(36px, 7vw, 64px);
+  white-space: nowrap;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: #fb856a;
+  margin-bottom: 0;
+  /* Компенсация внутренних метрик шрифта */
+  padding-top: 0.06em;
+}
+
+.buyerName {
+  color: #fffadd;
+}

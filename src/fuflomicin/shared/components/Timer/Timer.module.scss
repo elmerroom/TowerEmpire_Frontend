@@ -1,0 +1,143 @@
+.timer {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 216px;
+  height: 135px;
+}
+
+.timerBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/img/fufl/timer.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.timerSvg {
+  position: absolute;
+  left: 9px; // Отступ слева для центрирования на циферблате
+  top: 58%;
+  transform: translateY(-50%) scaleX(-1); // Позиционируем и зеркалим
+  z-index: 1;
+}
+
+// Мигающая подсветка при count < 6
+.timerGlow {
+  position: absolute;
+  left: 9px;
+  top: 58%;
+  transform: translateY(-50%);
+  width: 96.24px;
+  height: 96.24px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 60, 60, 1.6) 0%,
+    rgba(255, 60, 60, 0) 70%
+  );
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+
+  &.active {
+    animation: glowPulse 0.5s ease-in-out infinite;
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.15);
+  }
+}
+
+.timerCircleProgress {
+  transition: fill 0.3s ease;
+
+  &.glowPulse {
+    animation: circlePulse 0.5s ease-in-out infinite;
+  }
+}
+
+@keyframes circlePulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.timerArrow {
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+}
+
+.timerText {
+  position: absolute;
+  top: 58%;
+  left: 49px; // Центр круга (10px + 96.24px/2 ≈ 58px)
+  transform: translateY(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffb546;
+  user-select: none;
+  z-index: 2;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.pauseLabel {
+  position: absolute;
+  top: 58%;
+  left: 9px;
+  width: 96px;
+  text-align: center;
+  transform: translateY(-50%);
+  font-family: 'Nevduplenysh', sans-serif;
+  font-size: 52px;
+  color: #fb856a;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+  animation: pauseBlink 2.2s ease-in-out infinite;
+}
+
+@keyframes pauseBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+// Адаптивность
+@media (max-width: 768px) {
+  .timer {
+    width: 160px;
+    height: 100px;
+  }
+
+  .timerSvg {
+    left: 7px;
+  }
+
+  .timerText {
+    left: 55px;
+    font-size: 20px;
+  }
+}

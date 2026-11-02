@@ -1,0 +1,12 @@
+.d20Container {
+  width: 100px;
+  height: 100px;
+  margin: 12px auto 0; /* немного отступа под кубиком d6 */
+}
+
+@media (max-width: 768px) {
+  .d20Container {
+    width: 80px;
+    height: 80px;
+  }
+}

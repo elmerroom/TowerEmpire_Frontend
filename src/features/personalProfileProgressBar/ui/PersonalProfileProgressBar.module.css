@@ -1,0 +1,36 @@
+/* Не все стили готовы. На будущее для инкапсуляции стилей */
+.progressBar {
+  width: 100%;
+  max-width: 388px;
+  background-color: #102430;
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+  height: 9px;
+  margin: 15px auto;
+}
+
+.progressBar__line {
+  height: 100%;
+  background-color: #ffb546;
+  border-radius: inherit;
+  transition: width 0.5s ease-in-out;
+  position: relative;
+}
+
+.progressBar__label {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.progressBar__rhomb {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

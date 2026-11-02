@@ -1,0 +1,26 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+  padding: 0 4px;
+}
+
+.label {
+  font-family: 'Piazzolla', serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #7a5c3a;
+  line-height: 1.2;
+}
+
+.name {
+  font-family: 'Piazzolla', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ecb353;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

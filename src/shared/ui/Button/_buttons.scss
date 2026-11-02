@@ -1,0 +1,410 @@
+@use '/src/css/variables.scss' as *;
+
+%buttonFont {
+  color: $color-light-blue;
+  font-family: $font-text;
+  font-size: calc(16px + 3 * (100vw - 320px) / 1620);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.82;
+  letter-spacing: 0.1em;
+}
+
+// BUTTONS
+button {
+  background-color: $color-blue;
+  color: $color-sub-bg;
+  border-radius: 10px;
+  border: 1px solid $color-blue;
+  padding: 5px 20px;
+  @extend %buttonFont;
+  transition: 0.2s ease;
+
+  &:hover {
+    filter: brightness(0.88);
+    transform: scale(1.04);
+    box-shadow: 0 0 14px rgba(78, 181, 181, 0.45);
+  }
+}
+
+button:disabled {
+  /*   background-color: #355d74 !important; */
+  border: none;
+  opacity: 0.65;
+  cursor: not-allowed;
+  font-family: Gilroy Regular;
+}
+
+.play_button-lobby:disabled {
+  background-color: #223c4b !important;
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.toast-close-btn {
+  background: transparent;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  margin: auto 0.5rem auto auto;
+  opacity: 0.7;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  svg {
+    fill: #fff;
+    width: 12px;
+    height: 12px;
+  }
+
+  &:hover {
+    filter: none;
+    background: transparent;
+    opacity: 1;
+  }
+}
+
+.btn-back {
+  position: absolute;
+  left: 69px;
+  top: 26px;
+  width: 160px;
+  height: 46px;
+  background-color: #152a36;
+  border: 1px solid #4eb5b5;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+
+  p {
+    display: inline;
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+    vertical-align: middle;
+    padding-left: 16px;
+  }
+
+  &:hover {
+    filter: none;
+    transform: scale(1.04);
+    border-color: $color-blue;
+    color: $color-blue;
+    background: transparent;
+    box-shadow: 0 0 14px rgba(78, 181, 181, 0.45);
+  }
+
+  &:hover > i,
+  &:hover > p {
+    color: $color-blue;
+  }
+
+  &-fa {
+    margin-right: 7px;
+  }
+
+  @media (max-width: 992px) {
+    width: 130px !important;
+    height: 35px;
+  }
+  @media (max-width: 768px) {
+    border: none;
+    width: 100%;
+    &-fa {
+      display: block;
+      height: 25px;
+      position: absolute;
+      left: 25px;
+    }
+    p {
+      display: none;
+    }
+  }
+}
+
+// BTN SVG
+.btn-svg {
+  transform: scale(0.95);
+  padding: 0;
+  line-height: 0;
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    filter: none;
+    background-color: transparent;
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(78, 181, 181, 0.5);
+  }
+}
+
+.evil-cards-page .btn-svg:hover {
+  box-shadow: 0 0 10px rgba(255, 181, 70, 0.55);
+  & .svg-active {
+    color: #ffb546;
+  }
+  & .svg-inactive {
+    color: #ffffff;
+  }
+}
+
+.fuflomicin-page .btn-svg:hover {
+  box-shadow: 0 0 10px rgba(251, 133, 106, 0.55);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: $color-white;
+
+  &.gameBtn:hover {
+    filter: none;
+    background-color: #ffb546;
+    color: black;
+    transform: scale(1.04);
+    box-shadow: 0 0 14px rgba(255, 181, 70, 0.55);
+  }
+  &.fuflBtn:hover {
+    filter: none;
+    background-color: #fb856a;
+    color: #fff;
+    transform: scale(1.04);
+    box-shadow: 0 0 14px rgba(251, 133, 106, 0.55);
+  }
+  &.hffBtn:hover {
+    filter: none;
+    background-color: #db4b46 !important;
+    transform: scale(1.04);
+    box-shadow: 0 0 14px rgba(251, 133, 106, 0.55);
+  }
+}
+
+.btn-ashy {
+  background: $color-sub-bg;
+  border-color: $color-sub-bg;
+  height: 46px;
+  font-family: var(--font-family);
+  font-size: 22px;
+  font-weight: 600;
+  color: #102430;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  border-radius: 10px;
+
+  @media (max-width: 992px) {
+    height: 44px;
+    border-radius: 10px;
+  }
+}
+
+.btn-active {
+  background: $color-blue !important;
+}
+
+// CLOSE BUTTON
+.my-btn-close {
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer;
+
+  &:hover {
+    filter: none;
+    transform: scale(1.1);
+    box-shadow: none;
+  }
+
+  h6 {
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 1.3em;
+    letter-spacing: 0.02em;
+  }
+}
+
+.btn-submit {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+
+  @media (max-width: 768px) {
+    height: 44px;
+    margin-top: 10px;
+  }
+
+  &:disabled {
+    background-color: #848b8ef8;
+    border-color: #848b8ef8;
+  }
+}
+
+.btn-lobby {
+  font-family: var(--font-family);
+  font-size: 22px;
+  font-weight: 600;
+  color: #102430;
+  padding: 14px 14px;
+  letter-spacing: normal;
+  position: relative;
+  height: 46px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  border-radius: 10px;
+
+  &__create-room {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 992px) {
+      gap: 5.3px;
+    }
+  }
+
+  &_link {
+    text-decoration: none;
+    color: $color-blue !important;
+    display: inline;
+  }
+
+  @media (max-width: 992px) {
+    border-radius: 10px;
+    padding: 8px 8px;
+    height: 44px;
+  }
+}
+
+.btn-play-table {
+  height: 46px;
+  color: #102430;
+  @media (max-width: 768px) {
+    height: 44px;
+  }
+}
+
+.btn-lobby.btn-invite-page {
+  height: 46px;
+  color: #102430;
+  @media (max-width: 768px) {
+    height: 44px;
+  }
+}
+
+.modal-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.gameBtn {
+  display: flex;
+  align-items: center;
+  text-wrap: nowrap;
+  height: 46px;
+  padding: 5px 48px 5px 48px;
+  border: 1px solid #ffb546;
+  background: transparent;
+
+  @media (max-width: 768px) {
+    height: 44px;
+  }
+
+  &:hover {
+    filter: none;
+    transform: scale(1.04);
+    box-shadow: 0 0 14px rgba(255, 181, 70, 0.5);
+  }
+
+  &__confirm {
+    background-color: #ffb546;
+    &:hover {
+      filter: none;
+      background-color: #e5951c;
+      transform: scale(1.04);
+      box-shadow: 0 0 14px rgba(255, 181, 70, 0.55);
+    }
+  }
+}
+
+.fuflBtn {
+  display: flex;
+  align-items: center;
+  text-wrap: nowrap;
+  height: 46px;
+  padding: 5px 48px;
+  border: 1px solid #fb856a;
+  background: #a89879;
+  color: #222;
+
+  @media (max-width: 768px) {
+    height: 44px;
+  }
+
+  &.btn-outline {
+    color: #222;
+  }
+
+  &:hover {
+    filter: none;
+    transform: scale(1.04);
+    box-shadow: 0 0 14px rgba(251, 133, 106, 0.5);
+  }
+
+  &__confirm {
+    background-color: #fb856a;
+    color: #fff;
+    &:hover {
+      filter: none;
+      background-color: #c05151;
+      transform: scale(1.04);
+      box-shadow: 0 0 14px rgba(251, 133, 106, 0.55);
+    }
+  }
+}
+
+.hffBtn {
+  display: flex;
+  align-items: center;
+  text-wrap: nowrap;
+  height: 48px;
+  padding: 5px 30px 9px !important;
+  border: none;
+  font-family: Piazzolla, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  font-size: 20px;
+  color: #fffadd !important;
+  background-color: #a19582 !important;
+
+  @media (max-width: 768px) {
+    height: 44px;
+  }
+
+  &:hover {
+    filter: none;
+    transform: scale(1.04);
+    background-color: #db4b46 !important;
+    box-shadow: 0 0 14px rgba(251, 133, 106, 0.5);
+  }
+
+  &__confirm {
+    background-color: #be3f3b !important;
+    &:hover {
+      filter: none;
+      background-color: #db4b46 !important;
+      transform: scale(1.04);
+      box-shadow: 0 0 14px rgba(251, 133, 106, 0.55);
+    }
+  }
+}

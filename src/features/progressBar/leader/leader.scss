@@ -1,0 +1,66 @@
+@use '/src/css/variables.scss' as *;
+
+.status-bar__leader {
+  width: 16.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-right: 2px solid #333333;
+
+  &--hide {
+    opacity: 0;
+  }
+
+  h6 {
+    color: $color-white;
+    font-size: clamp(0.7rem, 2.145vh, 1.4rem);
+    line-height: 1.3em;
+    letter-spacing: 0.02em;
+    margin-bottom: 0;
+  }
+
+  p {
+    width: 100%;
+    font-size: clamp(0.7rem, 1.65vh, 1.4rem);
+    font-weight: 500;
+    line-height: 1.43em;
+    letter-spacing: 0.02em;
+    color: $color-gold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  @media (max-width: 1024px) {
+    border: none;
+    flex-direction: row;
+    width: 25%;
+    margin: 0 2vw 0 4.3vw;
+  }
+  @media (max-width: 932px) {
+    h6 {
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 12.32px;
+    }
+    p {
+      font-size: 10px;
+      line-height: 12.32px;
+    }
+  }
+  @media (max-height: 390px) {
+    border: none;
+    flex-direction: row;
+    padding-left: 0;
+    column-gap: 0.5vw;
+    h6 {
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 12.32px;
+    }
+    p {
+      font-size: 10px;
+      line-height: 12.32px;
+    }
+  }
+}
